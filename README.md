@@ -18,5 +18,5 @@ This is an example app for comparing popular frontend frameworks. You can find t
 - [React todo](https://github.com/marcushellberg/react-todo)
 - [Angular todo](https://github.com/marcushellberg/angular-todo)
 - [Vaadin TypeScript todo](https://github.com/marcushellberg/vaadin-typescript-todo)
-- [Vaadin Java Todo](https://github.com/marcushellberg/vadin-java-todo)
+- [Vaadin Java Todo](https://github.com/marcushellberg/vaadin-java-todo)
 - [Todo REST API](https://github.com/marcushellberg/todo-api)
