@@ -2,32 +2,25 @@ package org.vaadin.marcus;
 
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class TodoService {
-    private ArrayList<Todo> todos = new ArrayList<>();
+    private TodoRepository repo;
 
-    @PostConstruct
-    void init() {
-        todos.add(new Todo("Build todo app"));
+    TodoService(TodoRepository repo) {
+        this.repo = repo;
     }
-
 
     public List<Todo> getTodos() {
-        return todos;
+        return repo.findAll();
     }
 
-    public Todo addTodo(String task) {
-        Todo todo = new Todo(task);
-        todos.add(todo);
-        return todo;
+    public Todo saveTodo(Todo todo) {
+        return repo.save(todo);
     }
 
-    public void deleteTodo(UUID id) {
-        todos.removeIf(t -> t.getId().equals(id));
+    public void deleteTodo(Long id) {
+        repo.deleteById(id);
     }
 }
